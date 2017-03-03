@@ -13,33 +13,33 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Session;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 import com.datastax.driver.core.querybuilder.Select;
-import com.multi.server.dependency.domain.Person;
+import com.multi.server.dependency.domain.MSDEntity;
 
 public class CassandraApplication {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(CassandraApplication.class);
 
-  protected static Person newPerson(String name, int age) {
+  protected static MSDEntity newPerson(String name, int age) {
     return newPerson(UUID.randomUUID().toString(), name, age);
   }
 
-  protected static Person newPerson(String id, String name, int age) {
-    return new Person(id, name, age);
+  protected static MSDEntity newPerson(String id, String name, int age) {
+    return new MSDEntity(id, name, age);
   }
 
   public static void main(String[] args) {
 
     Cluster cluster = Cluster.builder().addContactPoints("localhost").build();
-    Session session = cluster.connect("mykeyspace");
+    Session session = cluster.connect("msd");
 
     CassandraOperations template = new CassandraTemplate(session);
 
-    Person jonDoe = template.insert(newPerson("Jon Doe", 40));
+    MSDEntity jonDoe = template.insert(newPerson("MSD", 40));
 
-    Select selectStatement = QueryBuilder.select().from("person");
+    Select selectStatement = QueryBuilder.select().from("msd");
     selectStatement.where(QueryBuilder.eq("id", jonDoe.getId()));
 
-    LOGGER.info(""+template.queryForObject(selectStatement, Person.class));
+    LOGGER.info(""+template.queryForObject(selectStatement, MSDEntity.class));
 
     template.truncate("person");
     session.close();

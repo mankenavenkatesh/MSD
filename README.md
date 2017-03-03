@@ -11,7 +11,7 @@ Steps to bring up the service:
 2) cd MSD.
 3) Run mvn spring-boot:run (or mvn package && java -jar target/msd-0.0.1-SNAPSHOT.jar)
 4) Should be able to access the service by calling  http://localhost:8080/.
-5) The above request will call the HelloController. Which is the initial point.
+5) The above request will call the PersonController. Which is the initial point.
 
 
 Database Integration
@@ -22,10 +22,4 @@ Database Integration
 
 Casssandra Models
 
-CREATE KEYSPACE msd WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};
-USE msd;
-CREATE TABLE Person(
-   id text PRIMARY KEY,
-   name text,
-   age varint
-   );
+Refer to msd.cql file.

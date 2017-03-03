@@ -2,9 +2,9 @@ package com.multi.server.dependency.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.multi.server.dependency.domain.Person;
+import com.multi.server.dependency.domain.MSDEntity;
 
-public interface PersonRepository extends CrudRepository<Person, String> {
+public interface MSDRepository extends CrudRepository<MSDEntity, String> {
 
 	  // additional custom finder methods go here
 	}

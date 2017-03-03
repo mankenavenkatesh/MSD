@@ -10,7 +10,7 @@ class ApplicationConfig extends AbstractCassandraConfiguration {
 
   @Override
   protected String getKeyspaceName() {
-    return "mykeyspace";
+    return "msd";
   }
 
   public String[] getEntityBasePackages() {
