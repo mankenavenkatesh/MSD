@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>msd</name>
-	<description>Demo project for Spring Boot</description>
+	<description>MSD - Multi Server Dependency</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -27,9 +27,14 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
