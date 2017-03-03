@@ -5,22 +5,22 @@ import java.util.UUID;
 import org.springframework.data.cassandra.mapping.PrimaryKey;
 import org.springframework.data.cassandra.mapping.Table;
 
-@Table
+@Table(value="person")
 public class Person {
 
-  @PrimaryKey
-  private final UUID id;
+  @PrimaryKey("id")
+  private final String id;
 
   private final String name;
   private final int age;
 
-  public Person(UUID id, String name, int age) {
+  public Person(String id, String name, int age) {
     this.id = id;
     this.name = name;
     this.age = age;
   }
 
-  public UUID getId() {
+  public String getId() {
     return id;
   }
 

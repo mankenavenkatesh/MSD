@@ -2,20 +2,20 @@ package com.multi.server.dependency.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.multi.server.dependency.service.HelloService;
+import com.multi.server.dependency.service.PersonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class HelloController {
+public class PersonController {
 
 	@Autowired
-	HelloService helloService;
+	PersonService personService;
 	
     @RequestMapping("/")
     public String index() {
-    	return helloService.getHelloText();
+    	return personService.getHelloText();
         // return "Welcome to MSD";
     }
 

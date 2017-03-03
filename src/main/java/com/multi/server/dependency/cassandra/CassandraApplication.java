@@ -20,10 +20,10 @@ public class CassandraApplication {
   private static final Logger LOGGER = LoggerFactory.getLogger(CassandraApplication.class);
 
   protected static Person newPerson(String name, int age) {
-    return newPerson(UUID.randomUUID(), name, age);
+    return newPerson(UUID.randomUUID().toString(), name, age);
   }
 
-  protected static Person newPerson(UUID id, String name, int age) {
+  protected static Person newPerson(String id, String name, int age) {
     return new Person(id, name, age);
   }
 
