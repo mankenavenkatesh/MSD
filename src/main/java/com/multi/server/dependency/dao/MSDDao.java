@@ -12,7 +12,7 @@ public class MSDDao {
 	@Autowired
 	MSDRepository msdRepository;
 	
-	public MSDEntity getMSDEntity(String id){
+	public MSDEntity getMSDEntity(String id){		
 		return msdRepository.findOne(id);
 	}
 }

@@ -41,7 +41,7 @@ public class CassandraApplication {
 
     LOGGER.info(""+template.queryForObject(selectStatement, MSDEntity.class));
 
-    template.truncate("person");
+    template.truncate("msd");
     session.close();
     cluster.close();
   }
