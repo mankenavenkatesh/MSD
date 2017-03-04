@@ -9,8 +9,5 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class MsdApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
 
 }
