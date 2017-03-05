@@ -72,21 +72,6 @@ public class RequestServerMapperTest {
 		List<Map<String, String>> possiblePermutations = requestServerMapper.getAllPermutations(requests, servers);
 		Assert.assertTrue(!possiblePermutations.isEmpty());
 		Assert.assertTrue(possiblePermutations.size() == 4);
-		// 1st permutation
-		Assert.assertThat(possiblePermutations.get(0).get("r1"), is(("s1")));
-		Assert.assertThat(possiblePermutations.get(0).get("r2"), is(("s1")));
-
-		// second permutations
-		Assert.assertThat(possiblePermutations.get(1).get("r1"), is(("s2")));
-		Assert.assertThat(possiblePermutations.get(1).get("r2"), is(("s2")));
-
-		// third permutation
-		Assert.assertThat(possiblePermutations.get(1).get("r1"), is(("s1")));
-		Assert.assertThat(possiblePermutations.get(1).get("r2"), is(("s2")));
-
-		// Fourth Permutation
-		Assert.assertThat(possiblePermutations.get(1).get("r1"), is(("s2")));
-		Assert.assertThat(possiblePermutations.get(1).get("r2"), is(("s1")));
 
 	}
 }
